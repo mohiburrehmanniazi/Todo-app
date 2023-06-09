@@ -4,7 +4,7 @@ import { TodoItem } from "./TodoItem";
 import { AddTodo } from "./AddTodo";
 
 export const TodoList = () => {
-  const [items,  setItems] = useState([
+  const [items, setItems] = useState([
     {
       id: 1,
       title: "Learn React",
@@ -29,17 +29,7 @@ export const TodoList = () => {
     setItems([...items]);
   };
 
- const HandleComplete =(id) =>{
-  const new11 = items.map(item =>{
-    if(item.id === id){
-    return{...item, done: !item.done}
-    return item;
-    }
-  })
-  setItems(new11)
- }
-
-  function addTask(title) {
+function addTask(title) {
     if (!title) {
       return;
     }
@@ -65,9 +55,7 @@ export const TodoList = () => {
         ))}
       </div>
       <AddTodo addTodo={addTask} />
-      {/* <button className="todo-add-btn rounded-md" onClick={addTask}>
-        + New Task
-      </button> */}
+      
     </div>
   );
-    }
+};
